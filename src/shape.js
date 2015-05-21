@@ -24,7 +24,14 @@ Shape.prototype.toString = function() {
 Shape.prototype.getRGB = function() {
   // Return the rgb value (as a string) for the color you've selected.
   // You can have a preset list of colors that you switch on.
-  return "rgb(0,0,0)";
-}
+  var colors = {
+  	blue: "rgb(0,0,255)",
+  	red: "rgb(255,0,0)",
+  	black: "rgb(0,0,0)",
+  	yellow: "rgb(255,255,0)",
+  	green: "rgb(0,128,0)"
+  };
+  return colors[this.color]
+};
 
 module.exports = Shape;
