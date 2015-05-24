@@ -10,20 +10,26 @@ function Rectangle(width, length, color) {
 	this.width = width;
 }
 
+Rectangle.prototype = {
+	area: function() {
+		return (this.length * this.width);
+	},
+	perimeter: function() {
+		return (2*this.length + 2*this.width);
+	},
+	toString: function() {
+		return ("[Rectangle width: " + this.width + ", Rectangle length: " + this.length + ", color: " + this.color +"]");
+	}
+
+}
+
 Rectangle.prototype = Object.create(Shape.prototype); 
 Rectangle.prototype.constructor = Rectangle; 
 
-// Rectangle.prototype = {
-// 	area: function() {
-// 		return (this.length * this.width);
-// 	},
-// 	perimeter: function() {
-// 		return (2*this.length + 2*this.width);
-// 	},
-// 	toString: function() {
-// 		return ("[Rectangle width: " + this.width + ", Rectangle length: " + this.length + ", color: " + this.color +"]");
-// 	}
-// }
+
+
+
+console.log(Rectangle.prototype)
 
 Rectangle.prototype.area = function() {
 	return (this.length * this.width);
